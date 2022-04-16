@@ -1,4 +1,3 @@
-
 public class TitanProbeHashMap<K, V> extends LinearProbingHashTable<K, V> {
 
     public TitanProbeHashMap(int capacity) {
@@ -27,35 +26,26 @@ public class TitanProbeHashMap<K, V> extends LinearProbingHashTable<K, V> {
             if (keys[i] == null) {
                 totalMissCost++;
             } else {
-                int k = 0;
-                while (keys[(i + k) % tableSize] != null && k != tableSize) {
+                int j = 0;
+                while (keys[(i + j) % tableSize] != null && j != tableSize) {
                     totalMissCost++;
-                    k++;
+                    j++;
                 }
-                if (k == tableSize) {
-                    totalMissCost++;
-                }
+                totalMissCost++;
             }
         }
         return totalMissCost / tableSize;
     }
 
     public static double empiricalAverageSearchMissCost(String str) {
-        char[] charArray = str.toCharArray();
-        double totalMissCost = 0;
-
+        TitanProbeHashMap<Integer, Integer> stringTestMap = new TitanProbeHashMap<>(str.length());
         for (int i = 0; i < str.length(); i++) {
-            int index = i;
-            if (charArray[i] == 'E'){
-                totalMissCost++;
-            } else {
-                totalMissCost++;
-                while (charArray[index] != 'E' || index + 1 == i) {
-                    totalMissCost++;
-                    index++;
-                }
+            if (str.charAt(i) == 'O'){
+                stringTestMap.put(i, i);
             }
         }
-        return totalMissCost / str.length();
+        return stringTestMap.empiricalAverageSearchMissCost();
     }
+
+
 }

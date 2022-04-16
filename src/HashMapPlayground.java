@@ -37,4 +37,5 @@ public class HashMapPlayground {
         lineData.add(1, averageCostToSearch/1000);
         return lineData;
     }
+
 }
