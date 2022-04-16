@@ -1,5 +1,3 @@
-
-
 // Based on work by Segewick and Wayne (see the comment block at the end of this file)
 
 public class LinearProbingHashTable<K, V> {
@@ -105,7 +103,7 @@ public class LinearProbingHashTable<K, V> {
 
         // Commented out to allow for lambda to get to 90%
         // double table size if 50% full
-        if (size >= tableSize/2) resize(2*tableSize);
+        //if (size >= tableSize/2) resize(2*tableSize);
 
         int i;
         for (i = hash(key); keys[i] != null; i = (i + 1) % tableSize) {

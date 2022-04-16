@@ -1,11 +1,15 @@
 
 public class Lab8 {
     public static void main(String[] args) throws Exception {
-        TitanProbeHashMap<Integer,String> tm = new TitanProbeHashMap<>();
+        TitanProbeHashMap tm = new TitanProbeHashMap<>(8);
+        tm.put(0, 0);
+        tm.put(1, 1);
+        tm.put(4, 0);
+        tm.put(5, 5);
+        tm.put(6, 6);
+        System.out.println(tm.empiricalAverageSearchMissCost());
 
-        for(int i = 0; i<200; i+=2){
-            tm.put(i, Integer.toString(i));
-        }
-        System.out.println(tm.toString());
+        HashMapPlayground hm = new HashMapPlayground();
+        hm.printExperimentalResultsTable(8192);
     }
 }
