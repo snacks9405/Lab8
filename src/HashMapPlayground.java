@@ -5,7 +5,6 @@ public class HashMapPlayground {
     double lambda = 0.10;
     Random rand = new Random(42);
     
-
     public void printExperimentalResultsTable(int N) {
         ArrayList<ArrayList<Double>> dataList = new ArrayList<>();
         for (double i = lambda; i <= 0.9; i += .1) {
@@ -26,7 +25,7 @@ public class HashMapPlayground {
     public ArrayList<Double> generateData(double lambda, int N) {
         ArrayList<Double> lineData = new ArrayList<>();
         double averageCostToSearch = 0;
-        for (int i = 0; i <= 1000; i++) {
+        for (int i = 0; i < 1000; i++) {
             TitanProbeHashMap<Integer, Integer> mapToTest = new TitanProbeHashMap<>(N);
             for (int j = 0; j < lambda * N; j++) {
                 mapToTest.put(rand.nextInt(), j);

@@ -1,10 +1,7 @@
 public class TitanProbeHashMap<K, V> extends LinearProbingHashTable<K, V> {
 
     public TitanProbeHashMap(int capacity) {
-        tableSize = capacity;
-        size = 0;
-        keys = (K[]) new Object[tableSize];
-        values = (V[]) new Object[tableSize];
+        super(capacity);
     }
 
     public String toString() {
@@ -46,6 +43,4 @@ public class TitanProbeHashMap<K, V> extends LinearProbingHashTable<K, V> {
         }
         return stringTestMap.empiricalAverageSearchMissCost();
     }
-
-
 }
