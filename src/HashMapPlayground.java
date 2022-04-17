@@ -43,7 +43,7 @@ public class HashMapPlayground {
     public ArrayList<Double> generateData(double lambda, int N) {
         ArrayList<Double> lineData = new ArrayList<>();
         double averageCostToSearch = 0;
-        for (int i = 0; i <= 1000; i++) {
+        for (int i = 0; i < 1000; i++) {
             TitanProbeHashMap<Integer, Integer> mapToTest = new TitanProbeHashMap<>(N);
             for (int j = 0; j < lambda * N; j++) { //fills hashmap with lambda*N values
                 mapToTest.put(rand.nextInt(), j);
